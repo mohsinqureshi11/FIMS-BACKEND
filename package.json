@@ -1,27 +1,20 @@
 {
   "name": "fims-backend",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "node test-backend.js",
-    "test:echo": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.6.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "http": "^0.0.1-security",
     "mongoose": "^8.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.0"
   }
 }
