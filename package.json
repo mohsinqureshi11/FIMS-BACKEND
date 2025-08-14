@@ -1,9 +1,11 @@
 {
   "name": "fims-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,5 +18,8 @@
     "express": "^5.1.0",
     "http": "^0.0.1-security",
     "mongoose": "^8.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
   }
 }
