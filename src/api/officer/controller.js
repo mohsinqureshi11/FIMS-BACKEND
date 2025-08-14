@@ -3,7 +3,7 @@ import officerModel from "../../model/officer.js";
 // create officer by Admin
 export const createOfficer = async (req ,res) =>{
     try{
-        const {userName,email,gander,age,phoneNumber,desigination,profilePhoto} = req.body
+        const {userName,email,gander,age,phoneNumber,desigination} = req.body
 
         const officerObj = new officerModel({
             userName:userName,
@@ -12,7 +12,7 @@ export const createOfficer = async (req ,res) =>{
             age:age,
             phoneNumber:phoneNumber,
             desigination:desigination,
-            profilePhoto:profilePhoto
+            profilePhoto:null
         })
         
         const saveOfficer = await officerObj.save();

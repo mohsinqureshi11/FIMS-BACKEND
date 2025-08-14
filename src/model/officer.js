@@ -1,7 +1,6 @@
 //structure banayege api ka 
 
 import mongoose, { Schema } from "mongoose";
-import { type } from "os";
 
 const schema = mongoose.Schema;
 
@@ -15,6 +14,6 @@ const officerSchema = new Schema({
     profilePhoto:{type:String, require:true}
 })
 
-const officerModel = mongoose.model("FIMS_Officer",officerSchema);
+const officerModel = mongoose.model("fims_officers",officerSchema);
 
 export default officerModel;

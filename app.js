@@ -12,13 +12,13 @@ const app = express();
 app.use(express.json({limit:"200mb"}))   
 app.use(express.urlencoded({limit:"200mb",extended:true}))
 
-const corsOptions ={
-    origin : "https://fieldinspectionmanagmentsystem.netlify.app",
-    Credential:true,
-    optionSuccessStatus:200 
-}
+import cors from "cors";
 
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: process.env.FRONTEND_URL,  // dynamic frontend URL from .env
+  credentials: true,                  // spelling fix
+  optionsSuccessStatus: 200           // spelling fix
+}));
 
 
 app.use("/createOfficer",officerRoute);
