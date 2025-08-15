@@ -54,3 +54,36 @@ export const getAllOfficers = async (req, res) => {
     });
   }
 };
+
+// Delete Officer by Name
+export const deleteOfficer = async (req, res) => {
+    try {
+        const { name } = req.params;
+
+        if(!name){
+            return res.status(400).send({
+                status: false,
+                message: "Officer name is required"
+            })
+        }
+
+        const deleted = await officerModel.findOneAndDelete({ userName: name });
+
+        if(!deleted){
+            return res.status(404).send({
+                status: false,
+                message: "Officer not found"
+            })
+        }
+
+        return res.status(200).send({
+            status: true,
+            message: "Officer deleted successfully"
+        })
+    } catch (error) {
+        return res.status(500).send({
+            status: false,
+            message: error.message
+        })
+    }
+}
