@@ -9,16 +9,15 @@ import officerRoute from "./src/api/officer/route.js"
 
 const app = express();
 
-app.use(express.json({limit:"200mb"}))   
-app.use(express.urlencoded({limit:"200mb",extended:true}))
-
-import cors from "cors";
-
 app.use(cors({
   origin: process.env.FRONTEND_URL,  // dynamic frontend URL from .env
-  credentials: true,                  // spelling fix
+  methods:["POST","GET"],
+  // credentials: true,                  // JB authontication ka use ho tb
   optionsSuccessStatus: 200           // spelling fix
 }));
+
+app.use(express.json({limit:"200mb"}))   
+app.use(express.urlencoded({limit:"200mb",extended:true}))
 
 
 app.use("/createOfficer",officerRoute);
