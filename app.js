@@ -17,6 +17,7 @@ app.use(express.urlencoded({limit:"200mb",extended:true}))
 
 app.use("/createOfficer",officerRoute);
 app.use("/officerapi", officerRoute)
+app.use("/deleteOfficer", officerRoute)
 
 const port = process.env.PORT || 8005;
 
