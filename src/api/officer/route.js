@@ -8,6 +8,6 @@ router.post("/officerRegister", createOfficer)
 
 router.get("/getAllOfficers", getAllOfficers);   // yeh naya list API
 
-router.delete("/deleteOfficer/:name", deleteOfficer);
+router.delete("/deleteOfficer/:id", deleteOfficer);
 
 export default router;

@@ -55,19 +55,19 @@ export const getAllOfficers = async (req, res) => {
   }
 };
 
-// Delete Officer by Name
+// Delete Officer by ID
 export const deleteOfficer = async (req, res) => {
     try {
-        const { name } = req.params;
+        const { id } = req.params;
 
-        if(!name){
+        if(!id){
             return res.status(400).send({
                 status: false,
-                message: "Officer name is required"
+                message: "Officer id is required"
             })
         }
 
-        const deleted = await officerModel.findOneAndDelete({ userName: name });
+        const deleted = await officerModel.findByIdAndDelete(id);
 
         if(!deleted){
             return res.status(404).send({
